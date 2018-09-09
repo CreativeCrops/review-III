@@ -1,3 +1,11 @@
+# Overview data flow diagram for Crop recommendation system
+![Alt Overview data flow](/overview.png)
+
+
+# Algorithms to train a neural networK
+![Alt Train Algorithms](/train NN.png)
+
+
 # What are Artificial Neural Networks (ANNs)?
 
 The inventor of the first neurocomputer, Dr. Robert Hecht-Nielsen, defines a neural network as −
@@ -57,16 +65,16 @@ There is an only constraint on the arcs in a BN that you cannot return to a node
 
 BNs are capable of handling multivalued variables simultaneously. The BN variables are composed of two dimensions −
 
-Range of prepositions
+## Range of prepositions
 Probability assigned to each of the prepositions.
 Consider a finite set X = {X1, X2, …,Xn} of discrete random variables, where each variable Xi may take values from a finite set, denoted by Val(Xi). If there is a directed link from variable Xi to variable, Xj, then variable Xi will be a parent of variable Xj showing direct dependencies between the variables.
 
 The structure of BN is ideal for combining prior knowledge and observed data. BN can be used to learn the causal relationships and understand various problem domains and to predict future events, even in case of missing data.
 
-Building a Bayesian Network
+## Building a Bayesian Network
 A knowledge engineer can build a Bayesian network. There are a number of steps the knowledge engineer needs to take while building it.
 
-Example problem − Lung cancer. A patient has been suffering from breathlessness. He visits the doctor, suspecting he has lung cancer. The doctor knows that barring lung cancer, there are various other possible diseases the patient might have such as tuberculosis and bronchitis.
+**Example problem − Lung cancer. A patient has been suffering from breathlessness. He visits the doctor, suspecting he has lung cancer. The doctor knows that barring lung cancer, there are various other possible diseases the patient might have such as tuberculosis and bronchitis.**
 
 Gather Relevant Information of Problem
 
@@ -75,21 +83,21 @@ Is the patient exposed to air pollution? If yes, what sort of air pollution?
 Take an X-Ray positive X-ray would indicate either TB or lung cancer.
 Identify Interesting Variables
 
-The knowledge engineer tries to answer the questions −
+## The knowledge engineer tries to answer the questions −
 
-Which nodes to represent?
+### Which nodes to represent?
 What values can they take? In which state can they be?
 For now let us consider nodes, with only discrete values. The variable must take on exactly one of these values at a time.
 
-Common types of discrete nodes are −
+### Common types of discrete nodes are −
 
-Boolean nodes − They represent propositions, taking binary values TRUE (T) and FALSE (F).
+* Boolean nodes − They represent propositions, taking binary values TRUE (T) and FALSE (F).
 
-Ordered values − A node Pollution might represent and take values from {low, medium, high} describing degree of a patient’s exposure to pollution.
+* Ordered values − A node Pollution might represent and take values from {low, medium, high} describing degree of a patient’s exposure to pollution.
 
-Integral values − A node called Age might represent patient’s age with possible values from 1 to 120. Even at this early stage, modeling choices are being made.
+* Integral values − A node called Age might represent patient’s age with possible values from 1 to 120. Even at this early stage, modeling choices are being made.
 
-Possible nodes and values for the lung cancer example −
+### Possible nodes and values for the lung cancer example −
 
 Node Name	Type	Value	Nodes Creation
 Polution	Binary	{LOW, HIGH, MEDIUM}	BNN Node Creation
@@ -98,59 +106,37 @@ Lung-Cancer	Boolean	{TRUE, FASLE}
 X-Ray	Binary	{Positive, Negative}
 Create Arcs between Nodes
 
-Topology of the network should capture qualitative relationships between variables.
 
-For example, what causes a patient to have lung cancer? - Pollution and smoking. Then add arcs from node Pollution and node Smoker to node Lung-Cancer.
-
-Similarly if patient has lung cancer, then X-ray result will be positive. Then add arcs from node Lung-Cancer to node X-Ray.
-
-BNN Arc Creation
-Specify Topology
-
-Conventionally, BNs are laid out so that the arcs point from top to bottom. The set of parent nodes of a node X is given by Parents(X).
-
-The Lung-Cancer node has two parents (reasons or causes): Pollution and Smoker, while node Smoker is an ancestor of node X-Ray. Similarly, X-Ray is a child (consequence or effects) of node Lung-Cancer and successor of nodes Smoker and Pollution.
-
-Conditional Probabilities
-
-Now quantify the relationships between connected nodes: this is done by specifying a conditional probability distribution for each node. As only discrete variables are considered here, this takes the form of a Conditional Probability Table (CPT).
-
-First, for each node we need to look at all the possible combinations of values of those parent nodes. Each such combination is called an instantiation of the parent set. For each distinct instantiation of parent node values, we need to specify the probability that the child will take.
-
-For example, the Lung-Cancer node’s parents are Pollution and Smoking. They take the possible values = { (H,T), ( H,F), (L,T), (L,F)}. The CPT specifies the probability of cancer for each of these cases as <0.05, 0.02, 0.03, 0.001> respectively.
-
-Each node will have conditional probability associated as follows −
-
-Probabilities
-Applications of Neural Networks
+## Probabilities
+### Applications of Neural Networks
 They can perform tasks that are easy for a human but difficult for a machine −
 
-Aerospace − Autopilot aircrafts, aircraft fault detection.
+* Aerospace − Autopilot aircrafts, aircraft fault detection.
 
-Automotive − Automobile guidance systems.
+* Automotive − Automobile guidance systems.
 
-Military − Weapon orientation and steering, target tracking, object discrimination, facial recognition, signal/image identification.
+* Military − Weapon orientation and steering, target tracking, object discrimination, facial recognition, signal/image identification.
 
-Electronics − Code sequence prediction, IC chip layout, chip failure analysis, machine vision, voice synthesis.
+* Electronics − Code sequence prediction, IC chip layout, chip failure analysis, machine vision, voice synthesis.
 
-Financial − Real estate appraisal, loan advisor, mortgage screening, corporate bond rating, portfolio trading program, corporate financial analysis, currency value prediction, document readers, credit application evaluators.
+* Financial − Real estate appraisal, loan advisor, mortgage screening, corporate bond rating, portfolio trading program, corporate financial analysis, currency value prediction, document readers, credit application evaluators.
 
-Industrial − Manufacturing process control, product design and analysis, quality inspection systems, welding quality analysis, paper quality prediction, chemical product design analysis, dynamic modeling of chemical process systems, machine maintenance analysis, project bidding, planning, and management.
+* Industrial − Manufacturing process control, product design and analysis, quality inspection systems, welding quality analysis, paper quality prediction, chemical product design analysis, dynamic modeling of chemical process systems, machine maintenance analysis, project bidding, planning, and management.
 
-Medical − Cancer cell analysis, EEG and ECG analysis, prosthetic design, transplant time optimizer.
+* Medical − Cancer cell analysis, EEG and ECG analysis, prosthetic design, transplant time optimizer.
 
-Speech − Speech recognition, speech classification, text to speech conversion.
+* Speech − Speech recognition, speech classification, text to speech conversion.
 
-Telecommunications − Image and data compression, automated information services, real-time spoken language translation.
+* Telecommunications − Image and data compression, automated information services, real-time spoken language translation.
 
-Transportation − Truck Brake system diagnosis, vehicle scheduling, routing systems.
+* Transportation − Truck Brake system diagnosis, vehicle scheduling, routing systems.
 
-Software − Pattern Recognition in facial recognition, optical character recognition, etc.
+* Software − Pattern Recognition in facial recognition, optical character recognition, etc.
 
-Time Series Prediction − ANNs are used to make predictions on stocks and natural calamities.
+* Time Series Prediction − ANNs are used to make predictions on stocks and natural calamities.
 
-Signal Processing − Neural networks can be trained to process an audio signal and filter it appropriately in the hearing aids.
+* Signal Processing − Neural networks can be trained to process an audio signal and filter it appropriately in the hearing aids.
 
-Control − ANNs are often used to make steering decisions of physical vehicles.
+* Control − ANNs are often used to make steering decisions of physical vehicles.
 
-Anomaly Detection − As ANNs are expert at recognizing patterns, they can also be trained to generate an output when something unusual occurs that misfits the pattern.
+* Anomaly Detection − As ANNs are expert at recognizing patterns, they can also be trained to generate an output when something unusual occurs that misfits the pattern.
