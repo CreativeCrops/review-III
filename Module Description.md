@@ -12,13 +12,7 @@
 
 * **Module 3**- Implementation of existing system
 	* recommendation system graph based
-	```
-
-
-/**
- *
- * @author vignesh
- */
+```java
 public class Tris_data {
 
     
@@ -97,9 +91,7 @@ public class Tris_data {
         }
     }
     
-}
-
-	```
+}```
 
 * **Module 4**- Implementation of proposed system
 	* Artificial Intelligence And Machine Learning!
