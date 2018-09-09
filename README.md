@@ -6,6 +6,7 @@
 ![Alt Train Algorithms](/trainNN.png)
 
 
+
 # What are Artificial Neural Networks (ANNs)?
 
 The inventor of the first neurocomputer, Dr. Robert Hecht-Nielsen, defines a neural network as −
