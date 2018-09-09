@@ -3,7 +3,7 @@
 
 
 # Algorithms to train a neural networK
-![Alt Train Algorithms](/train NN.png)
+![Alt Train Algorithms](/trainNN.png)
 
 
 # What are Artificial Neural Networks (ANNs)?
