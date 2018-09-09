@@ -1,4 +1,5 @@
 #What are Artificial Neural Networks (ANNs)?
+
 The inventor of the first neurocomputer, Dr. Robert Hecht-Nielsen, defines a neural network as −
 
 "...a computing system made up of a number of simple, highly interconnected processing elements, which process information by their dynamic state response to external inputs.”
